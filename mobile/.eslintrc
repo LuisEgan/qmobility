@@ -1,0 +1,59 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    // Required for certain syntax usages
+    "ecmaVersion": 2020
+  },
+  "extends": ["airbnb", "plugin:@typescript-eslint/recommended"],
+  "plugins": ["react", "@typescript-eslint", "@babel"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".native.ts",
+          ".native.tsx"
+        ],
+        "moduleDirectory": ["node_modules"]
+      }
+    }
+  },
+  "rules": {
+    "linebreak-style": "off",
+    "object-curly-newline": "off",
+    "quotes": ["error", "double"],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "implicit-arrow-linebreak": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-alert": "off",
+    "no-tabs": "off",
+    "react/prop-types": "off",
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "no-use-before-define": "off",
+    "react/no-unused-prop-types": "off",
+    "no-restricted-globals": "off",
+    "react/default-props-match-prop-types": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "react/jsx-filename-extension": [2, { "extensions": [".ts", ".tsx"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  }
+}

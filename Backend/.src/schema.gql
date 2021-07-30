@@ -1,0 +1,97 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User implements BaseType {
+  _id: String!
+  id: ID!
+  updatedAt: DateTime
+  createAt: DateTime
+  deletedAt: DateTime
+  name: String!
+  lastname: String!
+  email: String!
+  password: String
+  username: String
+  dateOfBirth: DateTime
+  role: String!
+  active: Boolean!
+  recoveryPasswordToken: String
+  networkType: String!
+  avatarUrl: String
+}
+
+interface BaseType {
+  _id: String!
+  id: ID!
+  updatedAt: DateTime
+  createAt: DateTime
+  deletedAt: DateTime
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type AuthPayloadType {
+  accessToken: String!
+}
+
+type Query {
+  user(id: String!): User!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateProfileInput: UpdateProfileInput!): User!
+  changePasswordRequest(changePasswordRequestInput: ChangePasswordRequestInput!): User!
+  changePassword(changePasswordInput: ChangePasswordInput!): User!
+  uploadFile(file: Upload!): User!
+  login(loginInput: LoginInput!): AuthPayloadType!
+  signup(signUpInput: CreateUserInput!): User!
+  loginWithFacebook(facebookLogInInput: SocialNetworkLogInInput!): AuthPayloadType!
+  loginWithGoogle(googleLogInInput: SocialNetworkLogInInput!): AuthPayloadType!
+  loginWithLinkedIn(linkedinLogInInput: SocialNetworkLogInInput!): AuthPayloadType!
+  loginWithApple(appleLogInInput: SocialNetworkLogInInput!): AuthPayloadType!
+}
+
+input CreateUserInput {
+  name: String!
+  lastname: String!
+  email: String!
+  password: String!
+  role: String!
+  active: Boolean!
+  networkType: String!
+}
+
+input UpdateProfileInput {
+  name: String
+  lastname: String
+  email: String
+  username: String
+  dateOfBirth: DateTime
+}
+
+input ChangePasswordRequestInput {
+  email: String!
+}
+
+input ChangePasswordInput {
+  passwordRecoveryToken: String!
+  userId: String!
+  password: String!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+input SocialNetworkLogInInput {
+  accessToken: String!
+}

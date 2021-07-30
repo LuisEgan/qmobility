@@ -1,0 +1,752 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type _230V10A1X {
+  EVSE_PhaseVolt: Float!
+  EVSE_PhaseAmp: Float!
+  EVSE_Phase: Float!
+  EVSE_Power: Float!
+  Charge_PhaseVolt: Float!
+  Charge_PhaseAmp: Float!
+  Charge_Phase: Float!
+  Charge_Power: Float!
+  Charge_Time: Float!
+  Charge_Speed: Float!
+}
+
+type _230V16A1X {
+  EVSE_PhaseVolt: Float!
+  EVSE_PhaseAmp: Float!
+  EVSE_Phase: Float!
+  EVSE_Power: Float!
+  Charge_PhaseVolt: Float!
+  Charge_PhaseAmp: Float!
+  Charge_Phase: Float!
+  Charge_Power: Float!
+  Charge_Time: Float!
+  Charge_Speed: Float!
+}
+
+type _230V32A1X {
+  EVSE_PhaseVolt: Float!
+  EVSE_PhaseAmp: Float!
+  EVSE_Phase: Float!
+  EVSE_Power: Float!
+  Charge_PhaseVolt: Float!
+  Charge_PhaseAmp: Float!
+  Charge_Phase: Float!
+  Charge_Power: Float!
+  Charge_Time: Float!
+  Charge_Speed: Float!
+}
+
+type _230V16A3X {
+  EVSE_PhaseVolt: Float!
+  EVSE_PhaseAmp: Float!
+  EVSE_Phase: Float!
+  EVSE_Power: Float!
+  Charge_PhaseVolt: Float!
+  Charge_PhaseAmp: Float!
+  Charge_Phase: Float!
+  Charge_Power: Float!
+  Charge_Time: Float!
+  Charge_Speed: Float!
+}
+
+type _230V32A3X {
+  EVSE_PhaseVolt: Float!
+  EVSE_PhaseAmp: Float!
+  EVSE_Phase: Float!
+  EVSE_Power: Float!
+  Charge_PhaseVolt: Float!
+  Charge_PhaseAmp: Float!
+  Charge_Phase: Float!
+  Charge_Power: Float!
+  Charge_Time: Float!
+  Charge_Speed: Float!
+}
+
+type ChargeStandardTable {
+  _230V10A1X: _230V10A1X!
+  _230V16A1X: _230V16A1X!
+  _230V32A1X: _230V32A1X!
+  _230V16A3X: _230V16A3X!
+  _230V32A3X: _230V32A3X!
+}
+
+type Vehicle implements BaseType {
+  _id: String!
+  id: String!
+  updatedAt: DateTime
+  createAt: DateTime
+  deletedAt: DateTime
+  Vehicle_ID: Float!
+  Vehicle_Make: String!
+  Vehicle_Model: String!
+  Vehicle_Model_Version: String
+  Availability_Status: Float
+  Availability_Date_From: String
+  Availability_Date_To: String
+  Price_From_DE: Float!
+  Price_From_DE_Estimate: Boolean!
+  Price_From_NL: Float!
+  Price_From_NL_Estimate: Boolean!
+  Price_From_UK: Float!
+  Price_From_UK_Estimate: Boolean!
+  Drivetrain_Type: String!
+  Drivetrain_Fuel: String!
+  Drivetrain_Propulsion: String!
+  Drivetrain_Power: Float!
+  Drivetrain_Power_HP: Float!
+  Drivetrain_Torque: Float!
+  Performance_Acceleration: Float!
+  Performance_Topspeed: Float!
+  Range_WLTP: String
+  Range_WLTP_Estimate: Boolean!
+  Range_NEDC: String
+  Range_NEDC_Estimate: Boolean!
+  Range_Real: Float!
+  Range_Real_Mode: String!
+  Range_Real_WHwy: Float!
+  Range_Real_WCmb: Float!
+  Range_Real_WCty: Float!
+  Range_Real_BHwy: Float!
+  Range_Real_BCmb: Float!
+  Range_Real_BCty: Float!
+  Efficiency_WLTP: String
+  Efficiency_WLTP_FuelEq: String
+  Efficiency_WLTP_V: String
+  Efficiency_WLTP_FuelEq_V: String
+  Efficiency_WLTP_CO2: String
+  Efficiency_NEDC: String
+  Efficiency_NEDC_FuelEq: String
+  Efficiency_NEDC_V: String
+  Efficiency_NEDC_FuelEq_V: String
+  Efficiency_NEDC_CO2: String
+  Efficiency_Real: Float!
+  Efficiency_Real_FuelEq_V: Float!
+  Efficiency_Real_CO2: Float!
+  Efficiency_Real_WHwy: Float!
+  Efficiency_Real_WCmb: Float!
+  Efficiency_Real_WCty: Float!
+  Efficiency_Real_BHwy: Float!
+  Efficiency_Real_BCmb: Float!
+  Efficiency_Real_BCty: Float!
+  Charge_Plug: String!
+  Charge_Plug_Estimate: Boolean!
+  Charge_Plug_Location: String!
+  Charge_Standard_Power: Float!
+  Charge_Standard_Phase: Float!
+  Charge_Standard_PhaseAmp: Float!
+  Charge_Standard_ChargeTime: Float!
+  Charge_Standard_ChargeSpeed: Float!
+  Charge_Standard_Estimate: Boolean!
+  Charge_Standard_Table: ChargeStandardTable
+  Charge_Alternative_Power: String
+  Charge_Alternative_Phase: String
+  Charge_Alternative_PhaseAmp: String
+  Charge_Alternative_ChargeTime: String
+  Charge_Alternative_ChargeSpeed: String
+  Charge_Alternative_Table: String
+  Charge_Option_Power: String
+  Charge_Option_Phase: String
+  Charge_Option_PhaseAmp: String
+  Charge_Option_ChargeTime: String
+  Charge_Option_ChargeSpeed: String
+  Charge_Option_Table: String
+  Fastcharge_Plug: String
+  Fastcharge_Plug_Estimate: Boolean
+  Fastcharge_Plug_Location: String
+  Fastcharge_Power_Max: Float
+  Fastcharge_Power_Avg: Float
+  Fastcharge_ChargeTime: Float
+  Fastcharge_ChargeSpeed: Float
+  Fastcharge_Optional: Boolean
+  Fastcharge_Estimate: Boolean!
+  Battery_Capacity_Useable: Float!
+  Battery_Capacity_Full: Float!
+  Battery_Capacity_Estimate: String!
+  Dims_Length: Float!
+  Dims_Width: Float!
+  Dims_Height: Float!
+  Dims_Wheelbase: Float!
+  Dims_Weight: Float!
+  Dims_Bootspace: Float!
+  Dims_Bootspace_Max: Float!
+  Dims_TowWeight_Unbraked: String
+  Dims_TowWeight_Braked: String
+  Dims_RoofLoad_Max: String
+  Misc_Body: String!
+  Misc_Segment: String!
+  Misc_Seats: Float!
+  Misc_Roofrails: Boolean!
+  Misc_Isofix: String
+  Misc_Isofix_Seats: String
+  Misc_TurningCircle: String
+  EuroNCAP_Rating: Float!
+  EuroNCAP_Year: Float!
+  EuroNCAP_Adult: Float!
+  EuroNCAP_Child: Float!
+  EuroNCAP_VRU: Float!
+  EuroNCAP_SA: Float!
+  Related_Vehicle_ID_Succesor: String
+  EVDB_Detail_URL: String!
+  Images: [String!]
+  Videos: [String!]
+}
+
+interface BaseType {
+  _id: String!
+  id: String!
+  updatedAt: DateTime
+  createAt: DateTime
+  deletedAt: DateTime
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type IceVehicleType {
+  Make: String!
+  MakeModel: String!
+  Co2Emissions: Float!
+  YearMonthFirstRegistered: String!
+  FuelType: String!
+  SeatingCapacity: Float!
+  Colour: String!
+  VehicleClass: String!
+  VehiclePlate: String!
+  DoorPlanLiteral: String!
+  MaxSpeedKph: Float!
+  MaxSpeedMph: Float!
+  ModelVariant: String!
+  EngineCapacity: String!
+}
+
+type User implements BaseType {
+  _id: String!
+  id: String!
+  updatedAt: DateTime
+  createAt: DateTime
+  deletedAt: DateTime
+  name: String
+  lastname: String
+  email: String!
+  phone: String
+  phoneCountryCode: String
+  phoneCountry: String
+  password: String
+  username: String
+  dateOfBirth: DateTime
+  role: String!
+  active: Boolean!
+  recoveryPasswordToken: String
+  networkType: String!
+  avatarUrl: String
+  vehicles: [Vehicle!]!
+  selectedVehicle: Vehicle
+  random4digits: Float
+  iceVehicle: IceVehicleType
+  deleted: Boolean!
+}
+
+type VehicleRecommendation implements BaseType {
+  _id: String!
+  id: String!
+  updatedAt: DateTime
+  createAt: DateTime
+  deletedAt: DateTime
+  vehicle: Vehicle!
+  make: String!
+  makeModel: String!
+  category: String!
+}
+
+type AuthPayloadType {
+  accessToken: String!
+}
+
+type SchemeData {
+  OrganisationName: String!
+  Website: String!
+  TelephoneNo: String!
+}
+
+type Address {
+  SubBuildingName: String
+  BuildingName: String!
+  BuildingNumber: String!
+  Thoroughfare: String!
+  Street: String!
+  DoubleDependantLocality: String
+  DependantLocality: String
+  PostTown: String!
+  County: String!
+  PostCode: String!
+  Country: String!
+  UPRN: String
+}
+
+type ChargeDeviceLocation {
+  Latitude: String!
+  Longitude: String!
+  Address: Address!
+  LocationShortDescription: String
+  LocationLongDescription: String!
+}
+
+type ChargerConnector {
+  ConnectorId: String!
+  ConnectorType: String!
+  RatedOutputkW: String!
+  RatedOutputVoltage: String!
+  RatedOutputCurrent: String!
+  ChargeMethod: String!
+  ChargeMode: String!
+  ChargePointStatus: String!
+  TetheredCable: String!
+  Information: String!
+  Validated: String!
+}
+
+type DeviceOwner {
+  OrganisationName: String!
+  SchemeCode: String!
+  Website: String!
+  TelephoneNo: String!
+}
+
+type DeviceController {
+  OrganisationName: String!
+  SchemeCode: String!
+  Website: String!
+  TelephoneNo: String!
+}
+
+type ChargerDevice implements BaseType {
+  _id: String!
+  id: String!
+  updatedAt: DateTime
+  createAt: DateTime
+  deletedAt: DateTime
+  ChargeDeviceId: String
+  ChargeDeviceRef: String
+  ChargeDeviceName: String
+  ChargeDeviceText: String
+  ChargeDeviceLocation: ChargeDeviceLocation!
+  ChargeDeviceManufacturer: String
+  ChargeDeviceModel: String
+  PublishStatusID: String
+  DateCreated: String
+  DateUpdated: String
+  Attribution: String
+  DateDeleted: String
+  Connector: [ChargerConnector!]!
+  DeviceOwner: DeviceOwner!
+  DeviceController: DeviceController!
+  DeviceAccess: String
+  DeviceNetworks: String
+  ChargeDeviceStatus: String
+  PublishStatus: String
+  DeviceValidated: String
+  RecordModerated: String
+  RecordLastUpdated: String
+  RecordLastUpdatedBy: String
+  PaymentRequiredFlag: Boolean!
+  PaymentDetails: String
+  SubscriptionRequiredFlag: Boolean!
+  SubscriptionDetails: String
+  ParkingFeesFlag: Boolean!
+  ParkingFeesDetails: String
+  ParkingFeesUrl: String
+  AccessRestrictionFlag: Boolean!
+  AccessRestrictionDetails: String
+  PhysicalRestrictionFlag: Boolean!
+  PhysicalRestrictionText: String
+  OnStreetFlag: Boolean!
+  LocationType: String
+  Bearing: String
+  Accessible24Hours: Boolean!
+}
+
+type FirstRoute {
+  Time: Float!
+  Distance: Float!
+  Total_kWh: Float!
+}
+
+type FinalCoordinates {
+  latitude: Float!
+  longitude: Float!
+}
+
+type Route {
+  Origin: String!
+  Destination: String!
+  Distance: Float!
+  Distance_Difference: Float!
+  Time: Float!
+  Time_Difference: Float!
+  Time_Difference_With_Charges: Float!
+  Stops: Float!
+  Total_kWh: Float
+  Total_kWh_Difference: Float
+  Route_Coords: [FinalCoordinates!]!
+  Encoded_Path: String!
+}
+
+type Car {
+  Id: String!
+  Maker: String!
+  Model: String!
+  Standard_Plug: String!
+  Standard_Charge_Time: Float!
+  Fast_Plug: String!
+  Fast_Charge_Time: Float!
+  Initial_Range: Float!
+  Initial_Battery: Float!
+  Range_Real: Float!
+  Efficency_Real: Float!
+  Battery_Capacity: Float!
+  Tolerance: Float!
+}
+
+type Consumption {
+  Leg_Distance: Float!
+  Leg_Time: Float!
+  Leg_kWh: Float!
+  Leg_Residual_Battery: Float!
+  Residual_Battery_Percentage: Float!
+  TimeToCharge: Float!
+}
+
+type SearchPoint {
+  latitude: String!
+  longitude: String!
+  found: Float!
+}
+
+type Connector {
+  Id: String!
+  Type: String!
+}
+
+type Charger {
+  Id: String!
+  Name: String!
+  Distance: Float!
+  latitude: Float!
+  longitude: Float!
+  Connectors: [Connector!]!
+  Type: String!
+}
+
+type Routes {
+  First_Route: FirstRoute!
+  Route: Route!
+  Car: Car!
+  Consumption: [Consumption!]!
+  SearchPoints: [SearchPoint!]!
+  Chargers_Search_Radius: Float!
+  Chargers: [[Charger!]!]!
+}
+
+type MyRoute implements BaseType {
+  _id: String!
+  id: String!
+  updatedAt: DateTime
+  createAt: DateTime
+  deletedAt: DateTime
+  origin: String!
+  destination: String!
+  userId: String!
+  friendlyName: String!
+  category: String!
+  frequency: String!
+  kwh: Float
+  totalDistance: Float
+  totalTime: Float
+  carId: Float
+}
+
+type RecentRoutes implements BaseType {
+  _id: String!
+  id: String!
+  updatedAt: DateTime
+  createAt: DateTime
+  deletedAt: DateTime
+  origin: String!
+  destination: String!
+  userId: String!
+  friendlyName: String!
+  category: String!
+  frequency: String!
+  kwh: Float
+  totalDistance: Float
+  totalTime: Float
+  carId: Float
+}
+
+type Stats {
+  anualTotalMilles: Float!
+  averageTripLength: Float!
+  maxTripLength: Float!
+  minTripLength: Float!
+  totalTimeInCar: Float!
+  idleTimeOfCar: Float!
+  idlePercentageOfCar: Float!
+  weeklyAverageMiles: Float!
+  dailyAverageMiles: Float!
+  minRangeRequirement: Float!
+  maxRangeRequirement: Float!
+  totalCo2Saved: Float!
+  treesSaved: Float!
+}
+
+input IceVehicle {
+  Make: String!
+  MakeModel: String!
+  Co2Emissions: Float!
+  YearMonthFirstRegistered: String!
+  FuelType: String!
+  SeatingCapacity: Float!
+  Colour: String!
+  VehicleClass: String!
+  VehiclePlate: String!
+  DoorPlanLiteral: String!
+  MaxSpeedKph: Float!
+  MaxSpeedMph: Float!
+  ModelVariant: String!
+  EngineCapacity: String!
+}
+
+type Query {
+  """get logged in user information"""
+  user: User!
+
+  """return a vehicle by Vehicle_ID"""
+  vehicle(id: Float!): Vehicle!
+
+  """
+  return a vehicle by search input this can be; Vehicle_Make o Vehicle_Model
+  """
+  vehicles(vehicleSearchInput: VehicleSearchInput!): [Vehicle!]!
+
+  """return vehicles by makes and models"""
+  getVehicleByMakesAndModels(vehiclesByMakesAndModelsInput: VehicleByMakesAndModelsInput!): [Vehicle!]!
+
+  """return a list of modles based on the makes"""
+  getVehicleModels(vehiclesModelsInput: VehicleModelsInput!): [String!]!
+
+  """returns all vehicle makes"""
+  vehicleMakes: [String!]!
+
+  """returns a list of vehicle body types"""
+  vehicleBodyTypes: [String!]!
+
+  """
+  returns Internal Combustion Engine (ICE) vehicle and save it on the user
+  """
+  searchIceVehicle(plate: String!): IceVehicleType!
+
+  """book a test drive"""
+  bookTestDrive: Boolean!
+
+  """book a test drive from catalog"""
+  bookTestDriveCatalog(bookTestDriveInput: BookTestDriveInput!): Boolean!
+
+  """return the eve recommendation based on the category"""
+  vehicleRecommendation(category: String!): [VehicleRecommendation!]!
+
+  """Get all chargers in the UK"""
+  getAllChargers: [ChargerDevice!]!
+
+  """Get charger information by charger id"""
+  getChargerDevice(id: String!): ChargerDevice!
+
+  """Get the nearest chargers to the latitude, longitude and distance"""
+  getNearestChargerDevices(getNearestChargerInput: GetNearestChargerInput!): [ChargerDevice!]!
+
+  """Get routes from qMobilityLegacyApi"""
+  getRoutes(getRouteInput: GetRouteInput!): Routes!
+
+  """Get all user routes"""
+  getMyRoutes: [MyRoute!]!
+
+  """Get my recent routes"""
+  getMyRecentRoutes(limit: Float!): [RecentRoutes!]!
+  getMyStats: Stats!
+}
+
+input VehicleSearchInput {
+  Vehicle_Make: String
+  Vehicle_Model: String
+  limit: Float
+  skip: Float
+  minPrice: Float
+  maxPrice: Float
+  seats: [Float!]
+  bodyType: [String!]
+  rangeMin: Float
+  rangeMax: Float
+}
+
+input VehicleByMakesAndModelsInput {
+  makes: [String!]
+  models: [String!]
+  limit: Float
+  skip: Float
+}
+
+input VehicleModelsInput {
+  makes: [String!]
+}
+
+input BookTestDriveInput {
+  email: String!
+  name: String
+  carId: Float!
+}
+
+input GetNearestChargerInput {
+  latitude: Float!
+  longitude: Float!
+  distance: Float!
+}
+
+input GetRouteInput {
+  origin: String!
+  destination: String!
+  car_id: Float!
+  car_charge: Float
+  chargers_limit: Float
+  car_tolerance: Float
+  charger_distance: Float
+}
+
+type Mutation {
+  """update user profile"""
+  updateUser(updateProfileInput: UpdateProfileInput!): User!
+
+  """begin the change password process"""
+  changePasswordRequest(changePasswordRequestInput: ChangePasswordRequestInput!): User!
+
+  """change password process"""
+  changePassword(changePasswordInput: ChangePasswordInput!): User!
+
+  """begin the change password process"""
+  validateToken(validateTokenInput: ValidateTokenInput!): Boolean!
+
+  """upload user profile in base64 format"""
+  uploadProfileAvatar(filename: String!, base64: String!): User!
+
+  """delete account"""
+  deleteAccount: Boolean!
+
+  """login with Qmobility account"""
+  login(loginInput: LoginInput!): AuthPayloadType!
+
+  """sign up with Qmobility account"""
+  signup(signUpInput: CreateUserInput!): AuthPayloadType!
+
+  """login with Facebook account"""
+  loginWithFacebook(facebookLogInInput: SocialNetworkLogInInput!): AuthPayloadType!
+
+  """login with Google account"""
+  loginWithGoogle(googleLogInInput: SocialNetworkLogInInput!): AuthPayloadType!
+
+  """login with LinkedIn account"""
+  loginWithLinkedIn(linkedinLogInInput: SocialNetworkLogInInput!): AuthPayloadType!
+
+  """login with Apple account"""
+  loginWithApple(appleLogInInput: SocialNetworkLogInInput!): AuthPayloadType!
+
+  """re-send email confirmation for activate account"""
+  reSendEmailConfirmation(email: String!): Boolean!
+
+  """endpoint to validate the account"""
+  emailConfirmation(emailConfirmationInput: ValidateEmailConfirmationInput!): Boolean!
+
+  """Save user route"""
+  saveMyRoute(saveMyRouteInput: SaveMyRouteInput!): MyRoute!
+
+  """Update my route"""
+  updateMyRoute(updateMyRouteInput: UpdateMyRouteInput!): MyRoute!
+
+  """Delete user route"""
+  deleteMyRoute(myRouteId: String!): Boolean!
+}
+
+input UpdateProfileInput {
+  name: String
+  lastname: String
+  email: String
+  phone: String
+  phoneCountryCode: String
+  phoneCountry: String
+  username: String
+  dateOfBirth: DateTime
+  avatarUrl: String
+  selectedVehicle: Float
+  iceVehicle: IceVehicle
+}
+
+input ChangePasswordRequestInput {
+  email: String!
+}
+
+input ChangePasswordInput {
+  userId: String!
+  password: String!
+}
+
+input ValidateTokenInput {
+  userId: String!
+  token: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+input CreateUserInput {
+  name: String
+  lastname: String
+  email: String!
+  password: String!
+  role: String
+  active: String
+  networkType: String
+}
+
+input SocialNetworkLogInInput {
+  accessToken: String!
+}
+
+input ValidateEmailConfirmationInput {
+  email: String!
+  random4digits: Float!
+}
+
+input SaveMyRouteInput {
+  origin: String!
+  destination: String!
+  friendlyName: String!
+  category: String!
+  frequency: String!
+  kwh: Float
+  totalDistance: Float
+  totalTime: Float
+  carId: Float
+}
+
+input UpdateMyRouteInput {
+  myRouteId: String!
+  friendlyName: String
+  category: String
+  frequency: String
+}

@@ -1,0 +1,14 @@
+.drawer {
+  svg {
+    @apply w-5 h-5;
+  }
+  path {
+    fill: rgb(55, 142, 240);
+  }
+
+  .grid {
+    > div {
+      padding: 1rem 0;
+    }
+  }
+}

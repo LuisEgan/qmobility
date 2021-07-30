@@ -1,0 +1,17 @@
+server:
+  port: 3000
+
+emailTemplate:
+  qWelcomeTemplate: 'd-ec8605374288416a868b0f69d9cb00f5'
+  qResetPasswordTemplate: 'd-c7021f1d787b44308233d230be4da314'
+  qResetSucceededTemplate: 'd-8c203a88e2ab486d840271022dd055c0'
+  qAccountConfirmationTemplate: 'd-c519bec985ed4a0cb54a5a307d31fd56'
+  qRequestForATestDriveTemplate: 'd-92ea31bd77bf4607b952db8aec80bd56'
+  qMobilityTestDriveEmail: 'contact@qmobility.com'
+
+qMobility:
+  chargersApiUrl: 'https://chargepoints.dft.gov.uk/api/retrieve/registry/format/json'
+  vehiclesApiUrl: 'https://qmobilitystorage.blob.core.windows.net/qmobility-dev/autolist.json'
+  routesApiUrl: 'http://api.qmobility.net:8080/api/v1/route/'
+  platesApiUrl: 'https://uk1.ukvehicledata.co.uk/api/datapackage/VehicleData?v=2&api_nullitems=1'
+  platesApiKey: '8e5acc1b-17ea-4e18-a288-5d32d8a3be60'

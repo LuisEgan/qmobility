@@ -1,0 +1,82 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+  - master
+
+resources:
+  - repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 'e99a0fac-eeea-46e6-84d9-b42dcb59bd61'
+  imageRepository: 'backendqmobility'
+  containerRegistry: 'qmobilitycr.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  tag: '$(Build.BuildId)'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+stages:
+  - stage: Test
+    displayName: Test
+    jobs:
+      - job: Test
+        displayName: Test
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: Npm@1
+            inputs:
+              command: 'install'
+          - task: Npm@1
+            inputs:
+              command: 'custom'
+              customCommand: 'run azureTest'
+          - task: PublishCodeCoverageResults@1
+            inputs:
+              codeCoverageTool: 'Cobertura'
+              summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: 'junit.xml'
+              mergeTestResults: true
+              testRunTitle: 'Jest Unit Test'
+              failTaskOnFailedTests: true
+  - stage: Build
+    displayName: Build and push stage
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: Docker@2
+            displayName: Build and push an image to container registry
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository)
+              dockerfile: $(dockerfilePath)
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+  - stage: Deploy
+    displayName: Deploy to WebApp Linux Container
+    jobs:
+      - job: Deploy
+        displayName: Deploy
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: AzureRmWebAppDeployment@4
+            inputs:
+              ConnectionType: 'AzureRM'
+              azureSubscription: 'Berryq Azure(1)(1433e3fc-550a-494e-a053-c180c02878e5)'
+              appType: 'webAppContainer'
+              WebAppName: 'backend-qmobility'
+              DockerNamespace: 'qmobilitycr.azurecr.io'
+              DockerRepository: 'backendqmobility'
+              DockerImageTag: '$(Build.BuildId)'

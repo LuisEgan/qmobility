@@ -1,0 +1,19 @@
+db:
+  url: "mongodb://localhost:27017/qmobility"
+  useSsl: false
+
+jwt:
+  secret: "topSecret51"
+
+sendgrid:
+  sendGridUrl: "https://api.sendgrid.com/v3/mail/send"
+  apiKey: "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"
+  defaultSender: "no-reply@qmobility.com"
+
+storage:
+  account: "ragnarokblobstorage"
+  accountKey: "aghrXrEDXLPGw0Ai1ouwVPlXfN7Fie28NWOlCAU77i7OQPTb/mwW4CuVJFlZaUeSx4X7/TUmK/l68E5623hwZQ=="
+  containerName: "qmobility-blob"
+
+site:
+  host: "localhost:3000"
